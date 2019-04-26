@@ -13,7 +13,7 @@ public class TaskManagerFunctionalityTest {
 		System.setProperty("webdriver.chrome.driver", "H:/Eclipse/Library Files/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		
-		driver.get("http://localhost/codeigniter-todolist");
+		driver.get("http://localhost/todolist");
 		driver.manage().window().maximize();
 		
 		/*
@@ -25,11 +25,11 @@ public class TaskManagerFunctionalityTest {
 		driver.findElement(By.xpath("//*[@id=\"login_form\"]/p[3]/input")).click();
 		
 		/*
-		 * new todolist adding tested succesfully
+		 * following test is for adding new todolist
 		 */
 		
 		
-		for(int i = 0; i<4; i++) {
+		for(int i = 0; i<2; i++) {
 			
 			/*
 			 * test script for redirecting to the create todolist page
@@ -40,10 +40,11 @@ public class TaskManagerFunctionalityTest {
 		/*
 		 * test script for filling up add list form
 		 */
+		 
 		driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/p[2]/a")).click();
 		
-		driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/p[1]/input")).sendKeys(" List");
-		driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/p[2]/textarea")).sendKeys("This is the second list to be enlist");
+		driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/p[1]/input")).sendKeys("List No. " + i);
+		driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/p[2]/textarea")).sendKeys("This is the No. " + i + " list to be enlisted");
 		
 		driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/p[3]/input")).click();
 		
@@ -55,7 +56,7 @@ public class TaskManagerFunctionalityTest {
 		 */
 		 
 		
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < 6; i++) {
 			driver.findElement(By.linkText("Home")).click();
 			driver.findElement(By.linkText("View List")).click();
 			
@@ -67,6 +68,27 @@ public class TaskManagerFunctionalityTest {
 			
 			
 		}
+		
+		/*
+		 * The following test case is for editing 
+		 * todolists
+		 */
+		
+		for (int e = 0; e<8; e++) {
+			driver.findElement(By.linkText("Home")).click();
+			driver.findElement(By.linkText("View List")).click();
+			driver.findElement(By.linkText("Edit list")).click();
+			driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/p[1]/input")).clear();
+			driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/p[2]/textarea")).clear();
+			
+			driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/p[1]/input")).sendKeys("List " + e + "edited");
+			driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/p[2]/textarea")).sendKeys("this is a edited version");
+			driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/p[3]/input")).click();
+		}
+		
+		driver.findElement(By.xpath("//*[@id=\"logout_form\"]/input")).click();
+		
+		
 	
 	}
 
