@@ -16,6 +16,7 @@ public class TaskManagerFunctionalityTest {
 		driver.get("http://localhost/todolist");
 		driver.manage().window().maximize();
 		
+		
 		/*
 		 * Trying to login
 		 */
@@ -34,7 +35,8 @@ public class TaskManagerFunctionalityTest {
 			/*
 			 * test script for redirecting to the create todolist page
 			 */
-		driver.findElement(By.xpath("/html/body/div[1]/div/div/div/ul/li[2]/a")).click();
+			
+			driver.findElement(By.xpath("/html/body/div[1]/div/div/div/ul/li[2]/a")).click();
 		
 
 		/*

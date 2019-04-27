@@ -9,8 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import junit.framework.Assert;
-
 public class LaunchApplication {
 
 	//@SuppressWarnings("deprecation")
@@ -21,7 +19,7 @@ public class LaunchApplication {
 		
 		WebDriver driver = new ChromeDriver();
 		
-		driver.get("http://localhost/codeigniter-todolist");
+		driver.get("http://localhost/todolist");
 		driver.manage().window().maximize();
 		
 		//finds elements using name
