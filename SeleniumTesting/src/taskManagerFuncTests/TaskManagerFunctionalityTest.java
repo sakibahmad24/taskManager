@@ -21,7 +21,7 @@ public class TaskManagerFunctionalityTest {
 		 * Trying to login
 		 */
 		
-		driver.findElement(By.xpath("//*[@id=\"login_form\"]/p[1]/input")).sendKeys("mirabid");
+		driver.findElement(By.xpath("//*[@id=\"login_form\"]/p[1]/input")).sendKeys("kazisakib");
 		driver.findElement(By.xpath("//*[@id=\"login_form\"]/p[2]/input")).sendKeys("26031971");
 		driver.findElement(By.xpath("//*[@id=\"login_form\"]/p[3]/input")).click();
 		
@@ -30,7 +30,7 @@ public class TaskManagerFunctionalityTest {
 		 */
 		
 		
-		for(int i = 0; i<2; i++) {
+		for(int i = 0; i<1; i++) {
 			
 			/*
 			 * test script for redirecting to the create todolist page
@@ -58,7 +58,7 @@ public class TaskManagerFunctionalityTest {
 		 */
 		 
 		
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 10; i++) {
 			driver.findElement(By.linkText("Home")).click();
 			driver.findElement(By.linkText("View List")).click();
 			

@@ -57,7 +57,7 @@
         <hr>
 
         <footer>
-            <p>&copy; Copyright 2013</p>
+            <p>&copy; Copyright Sakib</p>
         </footer>
     </div> <!-- /.fluid-container -->
 </body>

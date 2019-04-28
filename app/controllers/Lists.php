@@ -18,7 +18,7 @@ class Lists extends CI_Controller
 	public function index()
 	{
 		$user_id = $this->session->userdata('user_id');
-		$data['lists'] = $this->List_model->get_lists();
+		$data['lists'] = $this->List_model->get_all_lists($user_id);
 		//Load view
 		$data['main_content'] = 'lists/index';
 		$this->load->view('layouts/main', $data);
@@ -65,6 +65,8 @@ class Lists extends CI_Controller
 				'list_name' => $this->input->post('list_name'),
 				'list_body' => $this->input->post('list_body'),
 				'user_id' => $this->session->userdata('user_id')
+				// 'create_date' => $t=time()
+
 			);
 			if ($this->List_model->create_list($data)) {
 				$this->session->set_flashdata(

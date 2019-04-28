@@ -9,5 +9,6 @@
 			<attribute name="javadoc_location" value="http://junit.org/junit4/javadoc/latest/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="H:/Eclipse/mysql-connector-java-5.1.18-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
